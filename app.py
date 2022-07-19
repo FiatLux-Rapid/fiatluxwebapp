@@ -97,9 +97,10 @@ with st.form("my_form"):
         # next create a server transport - this is the vehicle through which you will send and receive
         client = SpeckleClient(host="https://speckle.xyz/")
         new_stream_id="36b6a4554d"  # spécifique au projet ToyExampleV2_APIJulia
-
-        account = get_default_account()
-        client.authenticate_with_account(account)
+        #client.authenticate_with_account(account)
+        client.authenticate_with_token("bb79167d4c8279ffcdac840cf0593191b54504f359")
+        #account = get_default_account()
+        #client.authenticate_with_account(account)
         transport = ServerTransport(client=client, stream_id=new_stream_id)
 
         # this serialises the block and sends it to the transport
