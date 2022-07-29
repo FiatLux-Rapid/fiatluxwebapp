@@ -133,7 +133,8 @@ with st.sidebar.form("my_form"):
         new_stream_id="b4fdac11b9"  # spécifique au projet ToyExampleV2_APIJulia
         client = SpeckleClient(host="speckle.xyz", use_ssl=True)
         account = get_default_account()
-        client.authenticate(token=account.token)
+      #  client.authenticate(token=account.token)
+        client.authenticate_with_token("bb79167d4c8279ffcdac840cf0593191b54504f359")
         transport = ServerTransport(client=client, stream_id=new_stream_id)
         last_obj_id = client.commit.list(new_stream_id)[0].referencedObject
         st.write(last_obj_id)
